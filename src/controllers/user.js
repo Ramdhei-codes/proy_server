@@ -25,6 +25,7 @@ function signUp(req, res) {
           user.save((err, userStored) => {
             if (err) {
               res.status(500).send({ message: "El usuario ya existe" });
+              console.log(err.message);
             } else {
               if (!userStored) {
                 res.status(404).send({ message: "Error al crear el usuario" });
@@ -38,5 +39,17 @@ function signUp(req, res) {
     }
   }
 }
+
+const signIn = (req, res) => {
+  console.log("LOGIN CORRECTO");
+  const params = req.body;
+  const email = params.email.toLoweCase();
+  const password = params.password;
+  User.findOne({ email }, (err, userStored) => {
+    if (err) {
+      res.status(500).send({ message: "Error del servidor" });
+    }
+  });
+};
 
 module.exports = { signUp };

@@ -20,7 +20,7 @@ const user = mongoose.Schema({
     require: true,
   },
   role: {
-    type: Boolean,
+    type: String,
     require: true,
   },
   avatar: {
