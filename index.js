@@ -10,7 +10,7 @@ mongoose.connect(
     if (err) {
       throw err;
     } else {
-      console.log("Sucess connection to db");
+      console.log("Successfully connected to db");
       app.listen(PORT_SERVER, () => {
         console.log("####################");
         console.log("####API REST########");

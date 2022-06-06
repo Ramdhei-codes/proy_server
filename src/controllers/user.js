@@ -42,7 +42,6 @@ function signUp(req, res) {
 }
 
 const signIn = (req, res) => {
-  console.log("LOGIN CORRECTO");
   const params = req.body;
   const email = params.email.toLowerCase();
   const password = params.password;
